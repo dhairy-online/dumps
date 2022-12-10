@@ -1,37 +1,25 @@
 print("Calculator in Python!")
-print("Select operation.")
-print("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division")
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+def add():
+    print(a + b)
 
-choice = input("Enter operation: ")
+def subtract():
+    print(a - b)
 
-def add(x, y):
-    return x + y
+def multiply():
+    print(a * b)
 
-def subtract(x, y):
-    return x - y
+def divide():
+    print(a / b)
 
-def multiply(x, y):
-    return x * y
+menu_dict = {
+    "add": add,
+    "subtract": subtract,
+    "multiply": multiply,
+    "divide": divide
+}
 
-def divide(x, y):
-    return x / y
-if choice in ('1', '2', '3', '4'):
-    num1 = float(input("Enter first number: "))
-    num2 = float(input("Enter second number: "))
-
-    if choice == '1':
-        print(num1, "+", num2, "=", add(num1, num2))
-
-    elif choice == '2':
-        print(num1, "-", num2, "=", subtract(num1, num2))
-
-    elif choice == '3':
-        print(num1, "*", num2, "=", multiply(num1, num2))
-
-    elif choice == '4':
-        if num2 == 0:
-            print("Division by 0 is not possible")
-        else:
-            print(num1, "/", num2, "=", divide(num1, num2))
-else:
-    print("Invalid Input")
+print("1. add\n2. subtract\n3. multiply\n4. divide\n5. exit")
+option = input("Enter option: ")
+menu_dict[option]()
