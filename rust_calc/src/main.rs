@@ -1,5 +1,4 @@
 use std::io::{self, Write};
-// Create a struct to hold operation data
 
 // Read using io::stdin().read_line()
 pub fn readline(msg: &str) -> i64 {
